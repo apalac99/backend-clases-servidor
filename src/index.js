@@ -2,6 +2,10 @@ import express, { query } from 'express'
 
 const app = express()
 
+app.use (express.json())
+
+
+
 app.get('/saludo', (req, res)=>{ // dos parametros en los () el path y el callback
 
     //res.send('<h1> desde express  desde el endpoint saludo </h1>')
@@ -69,3 +73,27 @@ app.get('/estudiante/', (req, res) => {
     console.log(selectedObject) 
     res.json(selectedObject);
 });
+
+
+
+
+// post   -----------------------------------------
+// colocar arriba           app.use (express.json())
+
+app.post ('/alumnos/', (req, res)=>{  
+    const alumno = req.body 
+    console.log(req.body)      
+    console.log('el domicilio es', alumno.domicilio.Numero)   
+    res.json({mensaje:'Body recibido bien'})
+})
+
+//http://localhost:8080/alumnos
+
+//para enviar un fetch desde el fronend
+
+// fetch()   por defecto en get
+
+// fetch (url, {method: 'POST',  body: aqui lo que se envia desde body})
+
+// agrgar arriba :
+//  app.use(express.urlencoded({extended:true}))     recibe de form  -> json
