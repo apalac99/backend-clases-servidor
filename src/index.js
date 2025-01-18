@@ -1,4 +1,4 @@
-import express from 'express'
+import express, { query } from 'express'
 
 const app = express()
 
@@ -30,7 +30,42 @@ app.listen(8080, ()=>{console.log('servidor levantado en 8080')})
 
 app.get('/productos/', (req, res)=>{  
     
-    const query = req.query    // deconstruccion de un objeto
+    const query = req.query    
     console.log(query)   
     res.send(query)
 })
+
+
+// elejir un objeto     http://localhost:8080/estudiante?id=1
+
+// Objetos
+const a1 = {
+    nombre: "juan jose",
+    edad: 8,
+    grado: 6,
+};
+
+const a2 = {
+    nombre: "maria jose",
+    edad: 9,
+    grado: 7,
+};
+
+// Endpoint para obtener el estudiante según el id
+app.get('/estudiante/', (req, res) => {
+    const { id } = req.query; // Extraer 'id' de los parámetros de consulta
+
+    // Seleccionar el objeto según el id
+    let selectedObject;
+    if (id === '1') {
+        selectedObject = a1;
+    } else if (id === '2') {
+        selectedObject = a2;
+    } else {
+        selectedObject = { error: "ID no válido. Usa id=1 o id=2" }; // Mensaje de error si no coincide
+    }
+
+    // Enviar la respuesta
+    console.log(selectedObject) 
+    res.json(selectedObject);
+});
