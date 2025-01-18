@@ -30,7 +30,7 @@ app.listen(8080, ()=>{console.log('servidor levantado en 8080')})
 
 app.get('/productos/', (req, res)=>{  
     
-    const query = req.query    
+    const query = req.query         // query por envir query y params en parametros
     console.log(query)   
     res.send(query)
 })
