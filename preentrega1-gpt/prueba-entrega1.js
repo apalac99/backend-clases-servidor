@@ -1,3 +1,7 @@
+
+//npm run start
+
+
 // Importar las dependencias necesarias
 const express = require('express');
 const fs = require('fs/promises');

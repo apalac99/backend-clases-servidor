@@ -2,10 +2,10 @@
   "name": "node-express-server",
   "version": "1.0.0",
   "description": "Servidor basado en Node.js y Express con rutas para manejar productos y carritos.",
-  "main": "prueba-entrega.js",
+  "main": "prueba-entrega1.js",
   "scripts": {
-    "start": "node prueba-entrega.js",
-    "dev": "nodemon prueba-entrega.js"
+    "start": "node prueba-entrega1.js",
+    "dev": "nodemon prueba-entrega1.js"
   },
   "dependencies": {
     "express": "^4.18.2"

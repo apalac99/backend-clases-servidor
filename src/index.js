@@ -14,7 +14,7 @@ app.get('/saludo', (req, res)=>{ // dos parametros en los () el path y el callba
 })    
 
 
-app.get('/alumnos/:idAlumno', (req, res)=>{    // :idalumno es lo que entra por parametro cuando se hace peticion /alumno/pedro (pedro se captura)
+app.get('/alumnos/:idAlumno', (req, res)=>{    // :idalumno es lo que entra por parametro cuando se hace peticion /alumnos/pedro (pedro se captura)
     console.log(req.params)   // params en un objeto vacio que se llena con lo que captura
     res.send(`Buenas noches ${req.params.idAlumno}` )
 
