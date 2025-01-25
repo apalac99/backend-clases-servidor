@@ -1,4 +1,18 @@
-import express, { query } from 'express'
+// Como hacer la api
+
+// npm init -y  crea el json
+// .gitignore   /node_modules 
+// agregar abajo de scripts en el json "dev": "node --watch app.js"   y agrega el type "type": "module", debajo de main
+// npm run dev 
+
+// instalar express
+// npm install express
+
+
+
+//------------------------------ inicio
+
+import express from 'express'
 
 const app = express()
 
